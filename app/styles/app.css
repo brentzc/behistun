@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,800|Raleway:600,800&display=swap');
+
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+@import "components.css";
+
+@import "tailwindcss/utilities";
+@import "utilities.css";
+
+body {
+    background-image: url("/assets/images/interlaced.png");
+}
+
+@font-face {
+    font-family: Ultras;
+    font-weight: 400;
+    src: url('/assets/fonts/ultrasliberi.ttf') format("woff");
+}

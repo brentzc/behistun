@@ -1,5 +1,9 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
-
-{{outlet}}
+{{page-title "Craig Brentz"}}
+<div class="container bg-white mx-auto">
+    <Site-Header />
+    <section class="container mx-auto mt-4 pl-16 pr-16">
+        <h1 class="text-2xl text-red-500 font-display">Lorem Ipsum</h1>
+        <p class="font-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consectetur aliquet arcu non aliquam. Praesent eget massa eget mauris tincidunt tempus. Ut non ante tortor. Praesent scelerisque neque magna. Sed pharetra orci vel quam tincidunt eleifend. Praesent eu scelerisque sapien, a gravida massa. Cras mattis tempus quam et gravida. Cras at tempor nunc, sed malesuada libero. Curabitur sollicitudin orci mauris, ut hendrerit urna tempus eu. Praesent eu magna non lacus feugiat porttitor. Proin interdum massa vitae lacus sodales convallis.</p>
+    </section>
+    {{yield}}
+</div>
