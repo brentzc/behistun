@@ -1,0 +1,18 @@
+<div ...attributes>
+  <a
+    href={{concat "https://etherscan.io/token/" @contract "?a=" @tokenId}}
+    class="border-2 font-display px-5 py-2 hover:bg-gray-200 my-4"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    View on Etherscan
+  </a>
+  <a
+    href={{concat "https://opensea.io/assets/" @contract "/" @tokenId}}
+    class="border-2 font-display px-5 py-2 hover:bg-gray-200 my-4"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    View on OpenSea
+  </a>
+</div>
