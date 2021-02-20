@@ -12,6 +12,10 @@
     <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
         <div class="lg:flex-grow" />
         <div>
+            <LinkTo @route="gallery" class="block mt-4 lg:inline-block lg:mt-0 text-indigo-200 hover:text-white mr-4">
+                <FaIcon @icon="gem" @prefix="far" />
+                <span class="ml-2">NFT Gallery</span>
+            </LinkTo>
             <a href="https://www.linkedin.com/in/craig-brentz-74540957/" target="_blank" rel="noopener noreferrer" class="block mt-4 lg:inline-block lg:mt-0 text-indigo-200 hover:text-white mr-4">
                 <FaIcon @icon="linkedin-in" />
                 <span class="ml-2">LinkedIn</span>
@@ -20,10 +24,10 @@
                 <FaIcon @icon="twitter" />
                 <span class="ml-2">Twitter</span>
             </a>
-            <a href="https://www.instagram.com/mr.incraigibile/" target="_blank" rel="noopener noreferrer" class="block mt-4 lg:inline-block lg:mt-0 text-indigo-200 hover:text-white mr-4">
+            {{!-- <a href="https://www.instagram.com/mr.incraigibile/" target="_blank" rel="noopener noreferrer" class="block mt-4 lg:inline-block lg:mt-0 text-indigo-200 hover:text-white mr-4">
                 <FaIcon @icon="instagram" />
                 <span class="ml-2">Instagram</span>
-            </a>
+            </a> --}}
         </div>
     </div>
     {{/if}}

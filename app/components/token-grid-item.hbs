@@ -1,0 +1,26 @@
+<div class="bg-white flex flex-col rounded">
+  <div class="relative w-min-0 m-0 overflow-hidden rounded-t">
+    <div class="m-0 w-min-0 w-full h-0 pb-full" />
+    <div class="absolute top-0 right-0 bottom-0 left-0 w-min-0">
+      {{#unless this.displayImage}}
+        <div class="animate-pulse flex space-x-4 absolute object-cover w-full h-full bg-indigo-200 rounded-t" />
+      {{/unless}}
+      <img
+        src={{this.image_path}}
+        alt={{@metadata.name}}
+        class="absolute object-cover w-full h-full {{unless this.displayImage "hidden"}}"
+        {{on-load this.allowDisplayImage}}
+      />
+    </div>
+  </div>
+  <div class="flex justify-between items-center">
+    {{#if @metadata.name}}
+      <h3 class="font-display p-5">{{@metadata.name}}</h3>
+    {{else}}
+      <div class="bg-indigo-200 animate-pulse rounded h-4 w-1/2 ml-2" />
+    {{/if}}
+    <LinkTo @route="gallery.nft" @model={{@token.id}} class="p-5 text-indigo-700">
+      <FaIcon @icon="eye" @prefix="far"/>
+    </LinkTo>
+  </div>
+</div>

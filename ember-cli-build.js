@@ -22,6 +22,10 @@ module.exports = function (defaults) {
       compile: {
         plugins: [
           {
+            module: require('autoprefixer'),
+            options: {}
+          },
+          {
             module: require('postcss-import'),
             options: {
               path: [ 'node_modules' ]

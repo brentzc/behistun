@@ -6,4 +6,10 @@ export default class Router extends EmberRouter {
   rootURL = config.rootURL;
 }
 
-Router.map(function () {});
+Router.map(function () {
+  this.route('home', { path: '/' }, function() {});
+  this.route('gallery', function() {
+    this.route('nft', { path: '/:token_id' });
+  });
+  this.route('provider-not-found');
+});
