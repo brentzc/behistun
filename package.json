@@ -56,6 +56,7 @@
     "ember-qunit": "^5.1.2",
     "ember-resolver": "^8.0.2",
     "ember-responsive": "^3.0.5",
+    "ember-rough-notation": "^0.1.0",
     "ember-source": "~3.25.1",
     "ember-template-lint": "^2.18.1",
     "ember-truth-helpers": "^2.1.0",

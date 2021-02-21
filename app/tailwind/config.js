@@ -24,10 +24,24 @@ module.exports = {
       },
       padding: {
         'full': '100%'
-      }
+      },
+      maxHeight: {
+        '124': '28rem'
+      },
+      cursor: {
+        'zoom-in': 'zoom-in',
+        'zoom-out': 'zoom-out'
+      },
+      backgroundImage: () => ({
+        'marble': "url('/assets/images/marble_texture.png')"
+      })
     },
   },
-  variants: {},
+  variants: {
+    extend: {
+      maxHeight: ['hover']
+    }
+  },
   corePlugins: {
     container: false
   },

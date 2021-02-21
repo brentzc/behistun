@@ -12,8 +12,13 @@ export default class TokenPageComponent extends Component {
   }
 
   @tracked displayImage = false;
+  @tracked modalOpen = false;
 
   @action allowDisplayImage() {
     this.displayImage = true;
+  }
+
+  @action toggleModal() {
+    this.modalOpen = !this.modalOpen;
   }
 }
