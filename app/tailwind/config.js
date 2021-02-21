@@ -66,4 +66,9 @@ module.exports = {
       })
     }
   ],
+  purge: [
+    './app/**/*.html',
+    './app/**/*.hbs',
+    './app/**/*.js'
+  ],
 };
