@@ -25,7 +25,7 @@
         {{on "click" this.toggleModal}}
       />
     </div>
-    <Token-Links
+    <Token::Links
       class="hidden lg:flex lg:flex-col w-1/4 pt-8 pr-8 text-center"
       @contract={{@token.contractAddress}}
       @tokenId={{@token.tokenId}}
@@ -43,7 +43,7 @@
       @displayClass="text-md text-gray-700 text-base font-body pt-8 text-left px-4 md:px-8"
     />
   </div>
-  <Token-Links
+  <Token::Links
     class="flex lg:hidden text-center mb-8 py-8 justify-evenly"
     @contract={{@token.contractAddress}}
     @tokenId={{@token.tokenId}}

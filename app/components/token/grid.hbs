@@ -2,7 +2,7 @@
   {{#each @tokens as |token|}}
     <Nft::Provider @token={{token}} as |provider|>
       {{#if provider.metadata}}
-        <Token-Grid-Item
+        <Token::Grid-Item
           @token={{provider.token}}
           @uri={{provider.uri}}
           @metadata={{provider.metadata}}

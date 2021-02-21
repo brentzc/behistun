@@ -1,21 +1,6 @@
 <div class="container lg:max-w-screen-lg mx-auto">
-  <div class="max-w-sm w-full lg:max-w-full lg:flex p-12">
-    <div class="p-4 flex flex-col justify-between leading-normal">
-      <Home-Page::Intro />
-      <div class="flex">
-        <a href="https://github.com/brentzc/" target="_blank" rel="noopener noreferrer" class="bg-white font-display mr-4">
-          <FaIcon @icon="github" />
-          <span class="ml-2">Github</span>
-        </a>
-        <a href="https://www.linkedin.com/in/craig-brentz-74540957/" target="_blank" rel="noopener noreferrer" class="bg-white font-display mr-4">
-          <FaIcon @icon="linkedin-in" />
-          <span class="ml-2">LinkedIn</span>
-        </a>
-        <a href="https://twitter.com/MrInCraigible" target="_blank" rel="noopener noreferrer" class="bg-white font-display mr-4">
-          <FaIcon @icon="twitter" />
-          <span class="ml-1">Twitter</span>
-        </a>
-      </div>
-    </div>
+  <div class="w-full p-6 md:p-12 flex flex-col ">
+    <Home-Page::Intro />
+    <Home-Page::Links />
   </div>
 </div>

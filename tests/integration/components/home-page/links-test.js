@@ -3,22 +3,22 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 
-module('Integration | Component | medici-icon', function(hooks) {
+module('Integration | Component | home-page/links', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
-    await render(hbs`<MediciIcon />`);
+    await render(hbs`<HomePage::Links />`);
 
     assert.equal(this.element.textContent.trim(), '');
 
     // Template block usage:
     await render(hbs`
-      <MediciIcon>
+      <HomePage::Links>
         template block text
-      </MediciIcon>
+      </HomePage::Links>
     `);
 
     assert.equal(this.element.textContent.trim(), 'template block text');

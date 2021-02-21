@@ -1,6 +1,6 @@
 <Nft::Provider @token={{@model}} as |provider|>
   {{#if provider.metadata}}
-    <Token-Page
+    <Token::Page
       @token={{provider.token}}
       @metadata={{provider.metadata}}
     />
