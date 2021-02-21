@@ -1,0 +1,12 @@
+<div class="bg-white absolute top-0 right-0 bottom-0 left-0 w-full h-full {{unless @isOpen "hidden"}}">
+  <button type="button" role="button" {{on "click" @onClick}} class="absolute top-0 right-0 mt-4 mr-4 text-indigo-700">
+    <FaIcon @icon="times-circle" @prefix="far" @size="3x" />
+  </button>
+  <img
+    role="button"
+    src={{@src}}
+    alt={{@alt}}
+    class="h-5/6 m-auto pt-20 cursor-zoom-out"
+    {{on "click" @onClick}}
+  />
+</div>

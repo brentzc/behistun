@@ -8,10 +8,6 @@
 @import "tailwindcss/utilities";
 @import "utilities.css";
 
-body {
-    background-image: url("/assets/images/interlaced.png");
-}
-
 @font-face {
     font-family: Ultras;
     font-weight: 400;

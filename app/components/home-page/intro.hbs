@@ -1,0 +1,14 @@
+<div class="mb-8 p-4 justify-between leading-normal" {{did-insert (perform this.startAnimation)}}>
+  <div class="text-5xl text-red-500 font-display font-bold mb-4 bg-white bg-opacity-75 tracking-wider">
+    Hello!
+  </div>
+  <Rough-Notation-Group @show={{this.showAnimation}} as |group|>
+    <p class="text-2xl text-gray-700 text-base font-body bg-white bg-opacity-75">
+      I'm <Rough-Notation @group={{group}} @type="underline" @color="#6365f2" @text="Craig Brentz," class="text-indigo-500" />a full-stack software developer from Chicago, Illinois.</p>
+    <p class="text-2xl text-gray-700 text-base font-body bg-white bg-opacity-75 pt-4">I've worked on web projects using many different frameworks and my personal favorites include
+      <Rough-Notation @group={{group}} @type="box" @color="#EF4444" @text="Ember" class="text-red-500 font-display" />
+      and
+      <Rough-Notation @group={{group}} @type="box" @color="#EF4444" @text="Node." class="text-red-500 font-display" />
+    </p>
+  </Rough-Notation-Group>
+</div>
