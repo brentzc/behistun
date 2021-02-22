@@ -1,0 +1,14 @@
+<LinkTo
+  @route={{@route}}
+  ...attributes
+  {{on "mouseenter" this.startAnimation}}
+  {{on "mouseleave" this.stopAnimation}}
+>
+  <Rough-Notation
+    @type="underline"
+    @color="white"
+    @show={{this.shouldAnimate}}
+  >
+    {{yield}}
+  </Rough-Notation>
+</LinkTo>

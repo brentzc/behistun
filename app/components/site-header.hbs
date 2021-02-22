@@ -1,22 +1,23 @@
 <nav class="flex items-center justify-between flex-wrap bg-indigo-800 p-6">
-    <LinkTo @route="home" class="flex items-center flex-shrink-0 text-white mr-6">
-        <Reed-Icon class="fill-current h-10 w-10 mr-2" />
-        <span class="font-display font-semibold text-xl tracking-wider">Craig Brentz</span>
-    </LinkTo>
-    <div class="block lg:hidden">
-        <button type="button" class="flex items-center px-3 py-2 border rounded text-indigo-200 border-indigo-400 hover:text-white hover:border-white" {{on "click" this.toggleNavDrawer}}>
-            <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
-        </button>
+  <LinkTo @route="home" class="flex items-center flex-shrink-0 text-white mr-6">
+    <Reed-Icon class="fill-current h-10 w-10 mr-2" />
+    <span class="font-display font-semibold text-xl tracking-wider">Craig Brentz</span>
+  </LinkTo>
+  <div class="block lg:hidden">
+    <button type="button" class="flex items-center px-3 py-2 border rounded text-indigo-200 border-indigo-400 hover:text-white hover:border-white" {{on "click" this.toggleNavDrawer}}>
+      <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+    </button>
+  </div>
+  {{#let (or this.navDrawerOpen (media 'isXl')) as |showNav|}}
+    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto {{unless showNav "hidden"}}">
+      <div class="lg:flex-grow" />
+      <Animated-Link
+        @route="gallery"
+        class="block mt-4 lg:inline-block lg:mt-0 text-indigo-200 hover:text-white mr-4"
+      >
+        <FaIcon @icon="gem" @prefix="far" />
+        <span class="ml-2">NFT Gallery</span>
+      </Animated-Link>
     </div>
-    {{#if (or (media 'isXl') this.navDrawerOpen)}}
-    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-        <div class="lg:flex-grow" />
-        <div>
-            <LinkTo @route="gallery" class="block mt-4 lg:inline-block lg:mt-0 text-indigo-200 hover:text-white mr-4">
-                <FaIcon @icon="gem" @prefix="far" />
-                <span class="ml-2">NFT Gallery</span>
-            </LinkTo>
-        </div>
-    </div>
-    {{/if}}
+  {{/let}}
 </nav>
