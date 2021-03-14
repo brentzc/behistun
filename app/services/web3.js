@@ -20,8 +20,35 @@ const erc721ContractDefinition = [
     payable: false,
     stateMutability: 'view',
     type: 'function',
-  },
+  }
 ];
+
+const erc1155ContractDefinition = [
+  {
+    constant: true,
+    inputs: [
+      {
+        name: '_tokenId',
+        type: 'uint256',
+      },
+    ],
+    name: 'uri',
+    outputs: [
+      {
+        name: '',
+        type: 'string',
+      },
+    ],
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
+  }
+];
+
+const CONTRACT_FOR_TYPE = {
+  ERC1155: erc1155ContractDefinition,
+  ERC721: erc721ContractDefinition
+}
 
 export default class Web3Service extends Service {
   constructor() {
@@ -35,10 +62,22 @@ export default class Web3Service extends Service {
     return Boolean(Web3.givenProvider);
   }
 
-  async getContract(contractAddress) {
+  async getContract(contractAddress, contractType) {
     return new this.instance.eth.Contract(
-      erc721ContractDefinition,
+      CONTRACT_FOR_TYPE[contractType],
       contractAddress
     );
+  }
+
+  async callContractMethod(contract, method, args) {
+    const contractMethod = await contract.methods[method](...args);
+
+    return new Promise((resolve, reject) => {
+      contractMethod.call({}, (error, result) => {
+        if (error) reject(error);
+
+        resolve(result);
+      })
+    });
   }
 }
