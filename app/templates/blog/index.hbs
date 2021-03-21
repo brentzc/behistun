@@ -1,0 +1,18 @@
+{{page-title "Blog"}}
+<div class="container mx-auto flex justify-center mt-10">
+  {{#if (gt @model.length 0)}}
+    <ul class="w-full">
+      {{#each @model as |post|}}
+        <li class="border border-gray rounded p-4 m-4 bg-white bg-opacity-95">
+          <LinkTo @route="blog.post" @model={{post.slug}}>
+            <span class="font-display text-indigo-700">{{post.title}}</span>
+          </LinkTo>
+        </li>
+      {{/each}}
+    </ul>
+  {{else}}
+    <div class="w-full border border-gray rounded p-4 m-4 bg-white bg-opacity-95">
+      <span class="font-display text-indigo-700">Coming Soon!</span>
+    </div>
+  {{/if}}
+</div>

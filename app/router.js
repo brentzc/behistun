@@ -12,4 +12,7 @@ Router.map(function () {
     this.route('nft', { path: '/:token_id' });
   });
   this.route('provider-not-found');
+  this.route('blog', function() {
+    this.route('post', { path: '/:post_title' });
+  });
 });

@@ -12,6 +12,13 @@
     <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto {{unless showNav "hidden"}}">
       <div class="lg:flex-grow" />
       <Animated-Link
+        @route="blog"
+        class="block mt-4 lg:inline-block lg:mt-0 text-indigo-200 hover:text-white mr-4"
+      >
+        <FaIcon @icon="bookmark" @prefix="far" />
+        <span class="ml-2">Words</span>
+      </Animated-Link>
+      <Animated-Link
         @route="gallery"
         class="block mt-4 lg:inline-block lg:mt-0 text-indigo-200 hover:text-white mr-4"
       >

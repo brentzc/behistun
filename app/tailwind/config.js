@@ -1,4 +1,4 @@
-/*global module*/
+/*global module require*/
 module.exports = {
   theme: {
     /** anything at the top level will replace tailwind default */
@@ -64,7 +64,8 @@ module.exports = {
           }
         }
       })
-    }
+    },
+    require('@tailwindcss/typography'),
   ],
   purge: [
     './app/**/*.html',
