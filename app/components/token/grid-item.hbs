@@ -1,4 +1,4 @@
-<div class="bg-white flex flex-col rounded shadow-lg" {{did-insert this.loadNft}}>
+<div class="bg-white dark:bg-gray-700 flex flex-col rounded shadow-lg" {{did-insert this.loadNft}}>
   <div class="relative w-min-0 m-0 overflow-hidden rounded-t">
     <div class="m-0 w-min-0 w-full h-0 pb-full" />
     <div class="absolute top-0 right-0 bottom-0 left-0 w-min-0">
@@ -17,9 +17,9 @@
     <Loading-Text
       @text={{@token.metadata.name}}
       @loadingClass="bg-indigo-200 animate-pulse rounded h-4 w-1/2 ml-2"
-      @displayClass="font-display text-blue-800 text-xl tracking-widest p-5"
+      @displayClass="font-display text-blue-800 dark:text-white text-xl tracking-widest p-5"
     />
-    <LinkTo @route="gallery.nft" @model={{@token.id}} class="p-5 text-indigo-700">
+    <LinkTo @route="gallery.nft" @model={{@token.id}} class="p-5 text-indigo-700 dark:text-white">
       <FaIcon @icon="eye" @prefix="far"/>
     </LinkTo>
   </div>

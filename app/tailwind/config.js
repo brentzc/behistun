@@ -1,5 +1,6 @@
 /*global module require*/
 module.exports = {
+  darkMode: 'class',
   theme: {
     /** anything at the top level will replace tailwind default */
     fontFamily: {
@@ -33,13 +34,59 @@ module.exports = {
         'zoom-out': 'zoom-out'
       },
       backgroundImage: () => ({
-        'marble': "url('/assets/images/marble_texture.png')"
+        'marble': "url('/assets/images/marble_texture.png')",
+      }),
+      typography: (theme) => ({
+        dark: {
+          css: {
+            color: theme('colors.white'),
+            a: {
+              color: theme('colors.red.500'),
+              '&:hover': {
+                color: theme('colors.red.500'),
+              },
+            },
+
+            h1: {
+              color: theme('colors.white'),
+            },
+            h2: {
+              color: theme('colors.white'),
+            },
+            h3: {
+              color: theme('colors.white'),
+            },
+            h4: {
+              color: theme('colors.white'),
+            },
+            h5: {
+              color: theme('colors.white'),
+            },
+            h6: {
+              color: theme('colors.white'),
+            },
+
+            strong: {
+              color: theme('colors.white'),
+            },
+
+            code: {
+              color: theme('colors.white'),
+            },
+
+            figcaption: {
+              color: theme('colors.white'),
+            },
+          },
+        },
       })
     },
   },
   variants: {
     extend: {
-      maxHeight: ['hover']
+      maxHeight: ['hover'],
+      backgroundImage: ['dark'],
+      typography: ["dark"]
     }
   },
   corePlugins: {

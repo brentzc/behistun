@@ -1,5 +1,5 @@
-<div class="bg-white absolute top-0 right-0 bottom-0 left-0 w-full h-full {{unless @isOpen "hidden"}}">
-  <button type="button" role="button" {{on "click" @onClick}} class="absolute top-0 right-0 mt-4 mr-4 text-indigo-700">
+<div class="bg-white dark:bg-black absolute top-0 right-0 bottom-0 left-0 w-full h-full {{unless @isOpen "hidden"}}">
+  <button type="button" role="button" {{on "click" @onClick}} class="absolute top-0 right-0 mt-4 mr-4 text-indigo-700 dark:text-white">
     <FaIcon @icon="times-circle" @prefix="far" @size="3x" />
   </button>
   <img

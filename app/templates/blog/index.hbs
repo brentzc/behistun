@@ -3,16 +3,16 @@
   {{#if (gt @model.length 0)}}
     <ul class="w-full">
       {{#each @model as |post|}}
-        <li class="border border-gray rounded p-4 m-4 bg-white bg-opacity-95">
+        <li class="border border-gray dark:border-gray-700 rounded p-4 m-4 bg-white dark:bg-gray-700 bg-opacity-95 dark:bg-opacity-100">
           <LinkTo @route="blog.post" @model={{post.slug}}>
-            <span class="font-display text-indigo-700">{{post.title}}</span>
+            <span class="font-display text-indigo-700 dark:text-white">{{post.title}}</span>
           </LinkTo>
         </li>
       {{/each}}
     </ul>
   {{else}}
-    <div class="w-full border border-gray rounded p-4 m-4 bg-white bg-opacity-95">
-      <span class="font-display text-indigo-700">Coming Soon!</span>
+    <div class="w-full border border-gray dark:border-gray-700 rounded p-4 m-4 bg-white dark:bg-gray-700 bg-opacity-95 dark:bg-opacity-100">
+      <span class="font-display text-indigo-700 dark:text-white">Coming Soon!</span>
     </div>
   {{/if}}
 </div>

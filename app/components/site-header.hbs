@@ -1,4 +1,4 @@
-<nav class="flex items-center justify-between flex-wrap bg-indigo-800 p-6">
+<nav class="flex items-center justify-between flex-wrap bg-indigo-800 dark:bg-gray-700 p-6">
   <LinkTo @route="home" class="flex items-center flex-shrink-0 text-white mr-6">
     <Reed-Icon class="fill-current h-10 w-10 mr-2" />
     <span class="font-display font-semibold text-xl tracking-wider">Craig Brentz</span>
@@ -25,6 +25,11 @@
         <FaIcon @icon="gem" @prefix="far" />
         <span class="ml-2">NFT Gallery</span>
       </Animated-Link>
+      <div class="block mt-4 lg:inline-block lg:mt-0 mr-4">
+        <button role="button" type="button" class="text-indigo-200 hover:text-white" {{on "click" this.darkMode.toggleDarkMode}}>
+          <FaIcon @icon="{{if this.darkMode.enabled "sun" "moon"}}" @prefix="far" />
+        </button>
+      </div>
     </div>
   {{/let}}
 </nav>
