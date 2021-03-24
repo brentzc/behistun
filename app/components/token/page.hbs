@@ -35,12 +35,12 @@
     <Loading-Text
       @text={{@token.metadata.name}}
       @loadingClass="bg-indigo-200 animate-pulse rounded h-8 w-1/2 mx-auto"
-      @displayClass="text-3xl text-indigo-500 font-display bg-white bg-opacity-75"
+      @displayClass="text-3xl text-indigo-500 dark:text-red-500 font-display bg-white bg-opacity-75 dark:bg-transparent"
     />
     <Loading-Text
       @text={{@token.metadata.description}}
       @loadingClass="bg-indigo-200 animate-pulse rounded h-64 w-10/12 mx-auto mt-8"
-      @displayClass="text-gray-700 text-lg font-body pt-8 text-left px-4 md:px-8 bg-white bg-opacity-75"
+      @displayClass="text-gray-700 dark:text-white text-lg font-body pt-8 text-left px-4 md:px-8 bg-white dark:bg-transparent bg-opacity-75"
     />
   </div>
   <Token::Links
