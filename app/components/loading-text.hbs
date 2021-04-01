@@ -1,5 +1,1 @@
-{{#if @text}}
-  <div class={{@displayClass}}>{{@text}}</div>
-{{else}}
-  <div class={{@loadingClass}}></div>
-{{/if}}
+<span class={{if @text @displayClass @loadingClass}}>{{@text}}</span>

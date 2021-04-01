@@ -1,7 +1,7 @@
 <div class="mb-8 p-4 justify-between leading-normal dark:bg-black" {{did-insert (perform this.startAnimation)}}>
-  <div class="text-5xl text-red-500 font-display font-bold tracking-wider mb-4 bg-white bg-opacity-75 dark:bg-transparent dark:bg-opacity-100">
+  <h2 class="text-5xl text-red-500 font-display font-bold tracking-wider mb-4 bg-white bg-opacity-75 dark:bg-transparent dark:bg-opacity-100">
     Hello!
-  </div>
+  </h2>
   <Rough-Notation-Group @show={{this.showAnimation}} as |group|>
     <p class="text-2xl text-gray-700 dark:text-white text-base font-body bg-white bg-opacity-75 dark:bg-transparent dark:bg-opacity-100">
       I'm <Rough-Notation @group={{group}} @type="underline" @color="{{if this.darkMode.enabled "#EF4444" "#6365f2"}}" @text="Craig Brentz," class="text-indigo-500 dark:text-red-500" />a full-stack software developer from Chicago, Illinois.</p>
