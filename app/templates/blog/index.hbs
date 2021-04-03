@@ -3,11 +3,14 @@
   {{#if (gt @model.length 0)}}
     <ul class="w-full">
       {{#each @model as |post|}}
-        <li class="border border-gray dark:border-gray-700 rounded p-4 m-4 bg-white dark:bg-gray-700 bg-opacity-95 dark:bg-opacity-100">
-          <LinkTo @route="blog.post" @model={{post.slug}}>
-            <span class="font-display text-indigo-700 dark:text-white">{{post.title}}</span>
-          </LinkTo>
-        </li>
+        <LinkTo
+          @tagName="li"
+          @route="blog.post"
+          @model={{post.slug}}
+          class="block w-full cursor-pointer border border-gray dark:border-gray-700 rounded p-4 m-4 bg-white dark:bg-gray-700 bg-opacity-95 dark:bg-opacity-100 hover:bg-gray-100 hover:border-indigo-500 dark:hover:border-red-500"
+        >
+          <span class="font-display text-indigo-700 dark:text-white">{{post.title}}</span>
+        </LinkTo>
       {{/each}}
     </ul>
   {{else}}
