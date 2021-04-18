@@ -11,6 +11,8 @@ export default class TokenModel extends Model {
   @attr('string') tokenId;
   @attr('string') contractDefinitionPath;
   @attr('string') contractType;
+  @attr('boolean') isSold;
+  @attr('string') sellDate;
 
   @tracked metadata = null;
 

@@ -14,7 +14,7 @@
       {{#if @token.metadata.attributes}}
         <div class="text-gray-700 dark:text-white text-lg font-body pt-8 bg-white dark:bg-transparent bg-opacity-75">
           {{#each @token.metadata.attributes as |attribute|}}
-            <div><span class="font-semibold">{{attribute.key}}:</span> <span class="text-indigo-500">{{attribute.value}}</span></div>
+            <div><span class="font-semibold">{{attribute.key}}:</span> <span class="text-indigo-500 dark:text-red-500">{{attribute.value}}</span></div>
           {{/each}}
         </div>
       {{/if}}
@@ -32,11 +32,16 @@
         {{on "click" this.toggleModal}}
       />
     </div>
-    <Token::Links
-      class="hidden lg:flex lg:flex-col w-1/4 pt-8 pr-8 text-center"
-      @contract={{@token.contractAddress}}
-      @tokenId={{@token.tokenId}}
-    />
+    <div class="hidden lg:flex lg:flex-col w-1/4 pt-8 pr-8 text-center">
+      {{#if @token.isSold}}
+        <div class="font-body text-indigo-500 dark:text-red-500">Sold on {{@token.sellDate}}</div>
+      {{/if}}
+      <Token::Links
+        class="grid"
+        @contract={{@token.contractAddress}}
+        @tokenId={{@token.tokenId}}
+      />
+    </div>
   </div>
   <div class="md:hidden text-center mt-4">
     <Loading-Text
