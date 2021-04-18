@@ -1,20 +1,18 @@
 <div ...attributes>
-  {{#let "bg-white dark:bg-gray-700 dark:text-white dark:border-gray-700 border-2 font-display px-5 py-2 hover:bg-gray-200 my-4" as |class|}}
-    <a
-      href={{concat "https://etherscan.io/token/" @contract "?a=" @tokenId}}
-      class={{class}}
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      View on Etherscan
-    </a>
-    <a
-      href={{concat "https://opensea.io/assets/" @contract "/" @tokenId}}
-      class={{class}}
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      View on OpenSea
-    </a>
-  {{/let}}
+  <a
+    href={{concat "https://etherscan.io/token/" @contract "?a=" @tokenId}}
+    class="token-link"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    View on Etherscan
+  </a>
+  <a
+    href={{concat "https://opensea.io/assets/" @contract "/" @tokenId}}
+    class="token-link"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    View on OpenSea
+  </a>
 </div>

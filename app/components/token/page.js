@@ -14,9 +14,9 @@ export default class TokenPageComponent extends Component {
     this.modalOpen = !this.modalOpen;
   }
 
-  @action async loadNft() {
+  @action async loadTokenMetadata() {
     try {
-      await this.args.token.loadNft();
+      await this.args.token.loadMetadata();
     } catch (error) {
       console.error(error);
     }

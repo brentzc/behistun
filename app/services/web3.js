@@ -45,9 +45,52 @@ const erc1155ContractDefinition = [
   }
 ];
 
+const hashmaskContractDefinition = [
+  {
+    constant: true,
+    inputs: [
+      {
+        name: '_maskId',
+        type: 'uint256',
+      },
+    ],
+    name: 'getIPFSHashOfMaskId',
+    outputs: [
+      {
+        name: '',
+        type: 'string',
+      },
+    ],
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    constant: true,
+    inputs: [
+      {
+        name: '_maskId',
+        type: 'uint256',
+      },
+    ],
+    name: 'getTraitsOfMaskId',
+    outputs: [
+      { name: 'character', type: 'string' },
+      { name: 'mask', type: 'string' },
+      { name: 'eyeColor', type: 'string' },
+      { name: 'skinColor', type: 'string' },
+      { name: 'item', type: 'string' },
+    ],
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
+  },
+];
+
 const CONTRACT_FOR_TYPE = {
   ERC1155: erc1155ContractDefinition,
-  ERC721: erc721ContractDefinition
+  ERC721: erc721ContractDefinition,
+  HASHMASK: hashmaskContractDefinition
 }
 
 export default class Web3Service extends Service {

@@ -9,9 +9,9 @@ export default class TokenGridItemComponent extends Component {
     this.displayImage = true;
   }
 
-  @action async loadNft() {
+  @action async loadTokenMetadata() {
     try {
-      await this.args.token.loadNft();
+      await this.args.token.loadMetadata();
     } catch (error) {
       console.error(error);
     }
