@@ -6,6 +6,7 @@ export default function contractForType(type) {
   return {
     ERC1155: erc1155ContractDefinition,
     ERC721: erc721ContractDefinition,
-    HASHMASK: hashmaskContractDefinition
+    HASHMASK: hashmaskContractDefinition,
+    MAKERSPLACE: erc721ContractDefinition
   }[type];
 }

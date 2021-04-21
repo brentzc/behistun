@@ -7,9 +7,9 @@ export default class TokenAdapter extends Adapter {
     return fetch(path).then((response) => response.json());
   }
 
-  findRecord(_, __, id) {
+  findRecord(_, __, slug) {
     return fetch(path)
       .then((response) => response.json())
-      .then((json) => json.find((token) => token.id === parseInt(id)));
+      .then((json) => json.find((token) => token.slug === slug));
   }
 }

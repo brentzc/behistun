@@ -16,7 +16,7 @@ export default class TokenPageComponent extends Component {
 
   @action async loadTokenMetadata() {
     try {
-      await this.args.token.loadMetadata();
+      await this.args.token.fetchMetadata();
     } catch (error) {
       console.error(error);
     }
