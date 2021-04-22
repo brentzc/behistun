@@ -16,6 +16,7 @@ export default class TokenModel extends Model {
   @attr('string') contractType;
   @attr('boolean') isSold;
   @attr('string') sellDate;
+  @attr('string') fileType;
 
   @tracked metadata = null;
 
@@ -63,5 +64,11 @@ export default class TokenModel extends Model {
     if (!this.metadata) return null;
 
     return this.tokenClass.imageUrl;
+  }
+
+  get videoUrl() {
+    if (!this.metadata || this.fileType !== 'VIDEO') return null;
+
+    return this.tokenClass.videoUrl;
   }
 }

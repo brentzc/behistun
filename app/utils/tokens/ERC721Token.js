@@ -12,6 +12,10 @@ class ERC721Token extends Token {
 
     return cidStart === -1 ? image : 'https://ipfs.infura.io' + image.slice(cidStart);
   }
+
+  get videoUrl() {
+    return this.metadata.animation_url;
+  }
 }
 
 export default ERC721Token;

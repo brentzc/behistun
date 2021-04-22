@@ -3,12 +3,11 @@ class Token {
 
   contractForAddress = {}
 
-  constructor({ contractAddress, tokenId, contractType, extras, metadata }, { web3 }) {
+  constructor({ contractAddress, tokenId, contractType, metadata }, { web3 }) {
     this.contractAddress = contractAddress;
     this.tokenId = tokenId;
     this.contractType = contractType;
     this.metadata = metadata;
-    this.extras = extras;
     this.web3 = web3;
   }
 

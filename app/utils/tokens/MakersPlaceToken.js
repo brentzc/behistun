@@ -11,6 +11,10 @@ class MakersPlaceToken extends Token {
   get imageUrl() {
     return this.metadata.imageUrl;
   }
+
+  get videoUrl() {
+    return this.metadata.properties.preview_media_file2.description;
+  }
 }
 
 export default MakersPlaceToken;

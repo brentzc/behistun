@@ -89,29 +89,7 @@ module.exports = {
       typography: ["dark"]
     }
   },
-  corePlugins: {
-    container: false
-  },
   plugins: [
-    ({ addComponents, theme }) => {
-      addComponents({
-        ".container": {
-          width: "100%",
-          "@screen sm": {
-            "maxWidth": theme("screens.sm")
-          },
-          "@screen md": {
-            "maxWidth": theme("screens.md")
-          },
-          "@screen lg": {
-            "maxWidth": theme("screens.lg")
-          },
-          "@screen xl": {
-            "maxWidth": theme("screens.lg")
-          }
-        }
-      })
-    },
     require('@tailwindcss/typography'),
   ],
   purge: [

@@ -20,7 +20,7 @@
     <Loading-Text
       @text={{@token.metadata.name}}
       @loadingClass="bg-indigo-200 animate-pulse rounded h-4 w-1/2 ml-2"
-      @displayClass="font-display text-blue-800 dark:text-white text-xl tracking-widest p-5"
+      @displayClass="font-display text-blue-800 dark:text-white text-md tracking-widest p-5 truncate"
     />
     <LinkTo @route="gallery.nft" @model={{@token.slug}} class="p-5 text-indigo-700 dark:text-white">
       <FaIcon @icon="eye" @prefix="far"/>
