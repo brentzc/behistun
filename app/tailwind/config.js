@@ -27,7 +27,9 @@ module.exports = {
         'full': '100%'
       },
       maxHeight: {
-        '124': '28rem'
+        '112': '28rem',
+        '128': '32rem',
+        '144': '36rem'
       },
       cursor: {
         'zoom-in': 'zoom-in',

@@ -23,7 +23,7 @@
       {{#if (eq @token.fileType "VIDEO")}}
         {{#if @token.videoUrl}}
           <video
-            class="max-h-96 rounded my-8 shadow-lg"
+            class="max-h-112 xl:max-h-128 rounded my-8 shadow-lg"
             muted
             controls
             loop
@@ -41,7 +41,7 @@
           role="button"
           src={{@token.imageUrl}}
           alt={{@token.metadata.name}}
-          class="bg-white object-cover max-h-96 rounded my-8 shadow-lg transform hover:max-h-124 duration-700 cursor-zoom-in {{unless this.displayImage "hidden"}}"
+          class="bg-white object-cover max-h-112 xl:max-h-128 rounded my-8 shadow-lg transform hover:max-h-128 xl:hover:max-h-144 duration-700 cursor-zoom-in {{unless this.displayImage "hidden"}}"
           {{on-load this.allowDisplayImage}}
           {{on "click" this.toggleModal}}
         />
