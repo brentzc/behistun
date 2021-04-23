@@ -1,5 +1,9 @@
 import Token from './Token';
 class MakersPlaceToken extends Token {
+  constructor(_, __, { marketplaceSlug }) {
+    super(...arguments);
+    this.marketplaceSlug = marketplaceSlug;
+  }
   async fetchMetadata(){
     const link = await this.callContractMethod({ method: 'tokenURI' })();
 
@@ -14,6 +18,10 @@ class MakersPlaceToken extends Token {
 
   get videoUrl() {
     return this.metadata.properties.preview_media_file2.description;
+  }
+
+  get marketplaceUrl() {
+    return `https://makersplace.com/${this.marketplaceSlug}`;
   }
 }
 

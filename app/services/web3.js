@@ -1,6 +1,5 @@
 import Service from '@ember/service';
 import Web3 from 'web3/dist/web3.min.js';
-import contractForType from '../utils/contract-for-type';
 
 export default class Web3Service extends Service {
   constructor() {
@@ -14,11 +13,8 @@ export default class Web3Service extends Service {
     return Boolean(Web3.givenProvider);
   }
 
-  getContract(contractAddress, contractType) {
-    return new this.instance.eth.Contract(
-      contractForType(contractType),
-      contractAddress
-    );
+  getContract(contractAddress, contractDefinition) {
+    return new this.instance.eth.Contract(contractDefinition, contractAddress);
   }
 
   async callContractMethod(contract, method, args) {

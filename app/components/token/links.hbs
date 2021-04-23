@@ -1,14 +1,28 @@
 <div ...attributes>
   <a
-    href={{concat "https://etherscan.io/token/" @contract "?a=" @tokenId}}
+    href="{{@token.etherscanUrl}}"
     class="token-link"
     rel="noopener noreferrer"
     target="_blank"
   >
     View on Etherscan
   </a>
+  {{#let (eq @token.marketplaceUrl @token.openseaUrl) as |noMarket|}}
+    {{#unless noMarket}}
+      <a
+        href="{{@token.marketplaceUrl}}"
+        class="token-link"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        View on {{@token.marketplaceName}}
+      </a>
+    {{/unless}}
+  {{/let}}
+
+  {{log @token.openseaUrl}}
   <a
-    href={{concat "https://opensea.io/assets/" @contract "/" @tokenId}}
+    href="{{@token.openseaUrl}}"
     class="token-link"
     rel="noopener noreferrer"
     target="_blank"

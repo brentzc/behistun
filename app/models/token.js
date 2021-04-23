@@ -2,7 +2,21 @@ import Model, { attr } from '@ember-data/model';
 import { inject as service } from '@ember/service';
 import { tracked } from '@glimmer/tracking';
 import tokens from '../utils/tokens';
-const { MakersPlaceToken, HashMaskToken, ERC1155Token, ERC721Token } = tokens;
+const {
+  MakersPlaceToken,
+  HashMaskToken,
+  ERC1155Token,
+  ERC721Token,
+  FoundationToken,
+  KnownOriginToken
+} = tokens;
+
+const Marketplaces = {
+  FOUNDATION: 'Foundation',
+  OPENSEA: 'OpenSea',
+  KNOWN_ORIGIN: 'Known Origin',
+  MAKERSPLACE: 'MakersPlace'
+}
 
 export default class TokenModel extends Model {
   @service web3;
@@ -10,13 +24,15 @@ export default class TokenModel extends Model {
   @attr('string') slug;
   @attr('string') marketplace;
   @attr('string') contractAddress;
-  @attr('string') metadataAddress; // unique to Hashmasks at the moment
   @attr('string') tokenId;
   @attr('string') contractDefinitionPath;
   @attr('string') contractType;
   @attr('boolean') isSold;
   @attr('string') sellDate;
   @attr('string') fileType;
+
+  @attr('string') metadataAddress; // unique to Hashmasks at the moment
+  @attr('string') marketplaceSlug;
 
   @tracked metadata = null;
 
@@ -45,6 +61,15 @@ export default class TokenModel extends Model {
       case 'ERC1155': {
         return new ERC1155Token(tokenArgs, services)
       }
+      case 'KNOWN_ORIGIN': {
+        return new KnownOriginToken(tokenArgs, services);
+      }
+      case 'FOUNDATION': {
+        const foundationProperties = {
+          marketplaceSlug: this.marketplaceSlug
+        }
+        return new FoundationToken(tokenArgs, services, foundationProperties);
+      }
       case 'HASHMASK': {
         const hashmaskProperties = {
           metadataAddress: this.metadataAddress
@@ -52,7 +77,10 @@ export default class TokenModel extends Model {
         return new HashMaskToken(tokenArgs, services, hashmaskProperties);
       }
       case 'MAKERSPLACE': {
-        return new MakersPlaceToken(tokenArgs, services);
+        const makersplaceProperties = {
+          marketplaceSlug: this.marketplaceSlug
+        }
+        return new MakersPlaceToken(tokenArgs, services, makersplaceProperties);
       }
       default: {
         throw new Error('Unsupported Contract Type');
@@ -70,5 +98,21 @@ export default class TokenModel extends Model {
     if (!this.metadata || this.fileType !== 'VIDEO') return null;
 
     return this.tokenClass.videoUrl;
+  }
+
+  get etherscanUrl() {
+    return this.tokenClass.etherscanUrl;
+  }
+
+  get marketplaceUrl() {
+    return this.tokenClass.marketplaceUrl;
+  }
+
+  get openseaUrl() {
+    return this.tokenClass.openseaUrl;
+  }
+
+  get marketplaceName() {
+    return Marketplaces[this.marketplace];
   }
 }

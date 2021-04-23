@@ -1,12 +1,22 @@
-import erc721ContractDefinition from './erc721-contract';
-import erc1155ContractDefinition from './erc1155-contract';
-import hashmaskContractDefinition from './hashmask-contract';
+import contractDefinitions from './contractDefinitions';
+const {
+  erc721ContractDefinition,
+  erc1155ContractDefinition,
+  hashmaskContractDefinition
+} = contractDefinitions;
 
 export default function contractForType(type) {
-  return {
-    ERC1155: erc1155ContractDefinition,
-    ERC721: erc721ContractDefinition,
-    HASHMASK: hashmaskContractDefinition,
-    MAKERSPLACE: erc721ContractDefinition
-  }[type];
+  switch (type) {
+    case 'ERC721':
+    case 'KNOWN_ORIGIN':
+    case 'FOUNDATION':
+    case 'MAKERSPLACE':
+      return erc721ContractDefinition;
+    case 'ERC1155':
+      return erc1155ContractDefinition;
+    case 'HASHMASK':
+      return hashmaskContractDefinition;
+    default:
+      throw new Error('Contract Not Supported');
+  }
 }
