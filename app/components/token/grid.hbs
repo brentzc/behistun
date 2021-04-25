@@ -1,5 +1,12 @@
-<div class="block md:grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-32 sm:gap-4 md:gap-8 lg:gap-16 py-10 lg:mx-16">
-  {{#each @tokens as |token|}}
+<div
+  class="block md:grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-32 sm:gap-4 md:gap-8 lg:gap-16 py-10 lg:mx-16"
+  {{did-insert this.setAnimatedItems.perform}}
+>
+  {{#animated-each this.items
+    use=this.transition
+    duration=1500
+    as |token|
+  }}
     <Token::Grid-Item @token={{token}} />
-  {{/each}}
+  {{/animated-each}}
 </div>
