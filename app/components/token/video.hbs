@@ -1,0 +1,9 @@
+<video ...attributes
+  muted
+  loop
+  controls
+>
+  {{#if @source}}
+    <source src={{@source}} type="video/mp4">
+  {{/if}}
+</video>

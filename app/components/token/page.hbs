@@ -21,18 +21,13 @@
     </div>
     <div class="w-full md:w-2/3 lg:w-1/2 flex justify-center">
       {{#if (eq @token.fileType "VIDEO")}}
-        {{#if @token.videoUrl}}
-          <video
-            class="max-h-112 xl:max-h-128 rounded my-8 shadow-lg"
-            muted
-            controls
-            loop
-          >
-            <source src={{@token.videoUrl}} type="video/mp4">
-          </video>
-        {{else}}
+        {{#unless @token.videoUrl}}
           <div class="loading-content-base h-96 w-full m-8" />
-        {{/if}}
+        {{/unless}}
+        <Token::Video
+          class="max-h-112 xl:max-h-128 rounded my-8 shadow-lg {{unless @token.videoUrl "hidden"}}"
+          @source={{@token.videoUrl}}
+        />
       {{else}}
         {{#unless this.displayImage}}
           <div class="loading-content-base h-96 w-full m-8" />
