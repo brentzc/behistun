@@ -24,6 +24,7 @@
       <Animated-Link
         @route="gallery"
         class="block mt-4 lg:inline-block lg:mt-0 text-indigo-200 hover:text-white mr-4"
+        {{on "mouseenter" this.loadTokens}}
       >
         <FaIcon @icon="gem" @prefix="far" />
         <span class="ml-2">NFT Gallery</span>
