@@ -9,7 +9,14 @@
           @model={{post.slug}}
           class="post-link"
         >
-          <span class="font-display text-indigo-700 dark:text-white">{{post.title}}</span>
+          <div class="flex justify-between">
+            <span class="font-display text-indigo-700 dark:text-white text-xl">{{post.title}}</span>
+            <span class="hidden md:block font-body text-gray-500 text-sm dark:text-red-500">{{post.publishDate}}</span>
+          </div>
+          <div class="hidden md:block font-body text-gray-500 text-sm dark:text-red-500 mt-4">
+            {{array-join post.subHeaders seperator=" | "}}
+          </div>
+          <div class="md:hidden font-body text-gray-500 text-sm dark:text-red-500">{{post.publishDate}}</div>
         </LinkTo>
       {{/each}}
     </ul>

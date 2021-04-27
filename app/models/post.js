@@ -5,6 +5,8 @@ export default class PostModel extends Model {
   @attr('string') url;
   @attr('string') title;
   @attr('string') slug;
+  @attr('string') publishDate;
+  @attr subHeaders;
 
   @tracked content = null;
 

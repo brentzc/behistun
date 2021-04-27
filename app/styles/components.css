@@ -1,8 +1,8 @@
 @layer components {
   .post-link {
-    @apply block w-full cursor-pointer border border-gray-200 rounded p-4 m-4 bg-white bg-opacity-95;
+    @apply block cursor-pointer border border-gray-200 rounded p-4 m-4 bg-white bg-opacity-95;
     @apply hover:bg-gray-100 hover:border-indigo-500;
-    @apply dark:border-gray-700 dark:bg-gray-700 dark:bg-opacity-100 dark:hover:border-red-500;;
+    @apply dark:border-gray-700 dark:bg-gray-700 dark:bg-opacity-100 dark:hover:border-red-500;
   }
 
   .loading-content-base {
