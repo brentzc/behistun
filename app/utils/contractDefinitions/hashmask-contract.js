@@ -1,43 +1,14 @@
 const hashmaskContractDefinition = [
-  {
-    constant: true,
-    inputs: [
-      {
-        name: '_maskId',
-        type: 'uint256',
-      },
-    ],
-    name: 'getIPFSHashOfMaskId',
-    outputs: [
-      {
-        name: '',
-        type: 'string',
-      },
-    ],
-    payable: false,
-    stateMutability: 'view',
-    type: 'function',
-  },
-  {
-    constant: true,
-    inputs: [
-      {
-        name: '_maskId',
-        type: 'uint256',
-      },
-    ],
-    name: 'getTraitsOfMaskId',
-    outputs: [
-      { name: 'character', type: 'string' },
-      { name: 'mask', type: 'string' },
-      { name: 'eyeColor', type: 'string' },
-      { name: 'skinColor', type: 'string' },
-      { name: 'item', type: 'string' },
-    ],
-    payable: false,
-    stateMutability: 'view',
-    type: 'function',
-  },
+  'function getIPFSHashOfMaskId(uint256 _maskId) view returns (string)',
+  `function getTraitsOfMaskId(uint256 _maskId)
+    view
+    returns (
+      string memory character,
+      string memory mask,
+      string memory eyeColor,
+      string memory skinColor,
+      string memory item
+    )`
 ];
 
 export default hashmaskContractDefinition;

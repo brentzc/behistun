@@ -1,4 +1,5 @@
 import Adapter from '@ember-data/adapter';
+import fetch from 'fetch';
 
 const path = '/data/posts.json';
 

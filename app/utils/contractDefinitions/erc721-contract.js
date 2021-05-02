@@ -1,23 +1,5 @@
 const erc721ContractDefinition = [
-  {
-    constant: true,
-    inputs: [
-      {
-        name: '_tokenId',
-        type: 'uint256',
-      },
-    ],
-    name: 'tokenURI',
-    outputs: [
-      {
-        name: '',
-        type: 'string',
-      },
-    ],
-    payable: false,
-    stateMutability: 'view',
-    type: 'function',
-  }
+  'function tokenURI(uint256 _tokenId) view returns (string)'
 ];
 
 export default erc721ContractDefinition;

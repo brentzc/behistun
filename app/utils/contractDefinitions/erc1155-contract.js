@@ -1,23 +1,5 @@
 const erc1155ContractDefinition = [
-  {
-    constant: true,
-    inputs: [
-      {
-        name: '_tokenId',
-        type: 'uint256',
-      },
-    ],
-    name: 'uri',
-    outputs: [
-      {
-        name: '',
-        type: 'string',
-      },
-    ],
-    payable: false,
-    stateMutability: 'view',
-    type: 'function',
-  }
+  'function uri(uint256 _tokenId) view returns (string)'
 ];
 
 export default erc1155ContractDefinition;

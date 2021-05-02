@@ -14,15 +14,13 @@ class Token {
     this.contractDefinition = contractForType(contractType);
   }
 
-  callContractMethod = ({ address = this.contractAddress, method }) => {
+  callContractMethod = async ({ address = this.contractAddress, method }) => {
     const { tokenId, contractDefinition } = this;
-    return async () => {
-      if (!this.contractForAddress[address]) {
-        this.contractForAddress[address] = await this.web3.getContract(address, contractDefinition);
-      }
-
-      return this.web3.callContractMethod(this.contractForAddress[address], method, [ tokenId ]);
+    if (!this.contractForAddress[address]) {
+      this.contractForAddress[address] = await this.web3.getContract(address, contractDefinition);
     }
+
+    return this.web3.callContractMethod(this.contractForAddress[address], method, [ tokenId ]);
   }
 
   get etherscanUrl() {

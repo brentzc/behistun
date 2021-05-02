@@ -6,8 +6,8 @@ class HashMaskToken extends Token {
   }
   async fetchMetadata(){
     const { tokenId, metadataAddress } = this;
-    const ipfsHash = await this.callContractMethod({ address: metadataAddress, method: 'getIPFSHashOfMaskId' })();
-    const attributes = await this.callContractMethod({ address: metadataAddress, method: 'getTraitsOfMaskId' })();
+    const ipfsHash = await this.callContractMethod({ address: metadataAddress, method: 'getIPFSHashOfMaskId' });
+    const attributes = await this.callContractMethod({ address: metadataAddress, method: 'getTraitsOfMaskId' });
 
     return {
       image: `https://ipfs.infura.io/ipfs/${ipfsHash}`,

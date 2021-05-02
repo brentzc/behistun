@@ -1,5 +1,6 @@
 import Model, { attr } from '@ember-data/model';
 import { tracked } from '@glimmer/tracking';
+import fetch from 'fetch';
 
 export default class PostModel extends Model {
   @attr('string') url;

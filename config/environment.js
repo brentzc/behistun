@@ -23,6 +23,9 @@ module.exports = function (environment) {
     },
     fontawesome: {
       defaultPrefix: 'fab'
+    },
+    fastboot: {
+      hostWhitelist: [ 'craig-brentz.com', /^localhost:\d+$/ ]
     }
   };
 

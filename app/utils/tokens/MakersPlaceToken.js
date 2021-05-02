@@ -1,11 +1,13 @@
 import Token from './Token';
+import fetch from 'fetch';
+
 class MakersPlaceToken extends Token {
   constructor(_, __, { marketplaceSlug }) {
     super(...arguments);
     this.marketplaceSlug = marketplaceSlug;
   }
   async fetchMetadata(){
-    const link = await this.callContractMethod({ method: 'tokenURI' })();
+    const link = await this.callContractMethod({ method: 'tokenURI' });
 
     const cidStart = link.indexOf('/ipfs/');
     const url = 'https://ipfs.infura.io' + link.slice(cidStart);

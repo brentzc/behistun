@@ -1,8 +1,9 @@
 import Token from './Token';
+import fetch from 'fetch';
 
 class ERC721Token extends Token {
   async fetchMetadata() {
-    const link = await this.callContractMethod({ method: 'tokenURI' })();
+    const link = await this.callContractMethod({ method: 'tokenURI' });
     return fetch(link).then((response) => response.json());
   }
 

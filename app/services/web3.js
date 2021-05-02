@@ -1,31 +1,23 @@
 import Service from '@ember/service';
-import Web3 from 'web3/dist/web3.min.js';
+import { ethers } from 'ethers';
 
 export default class Web3Service extends Service {
   constructor() {
     super();
-    if (Web3.givenProvider) {
-      this.instance = new Web3(Web3.givenProvider);
+    if (window.ethereum) {
+      this.provider = new ethers.providers.Web3Provider(window.ethereum);
     }
   }
 
   get hasProvider() {
-    return Boolean(Web3.givenProvider);
+    return !!this.provider;
   }
 
   getContract(contractAddress, contractDefinition) {
-    return new this.instance.eth.Contract(contractDefinition, contractAddress);
+    return new ethers.Contract(contractAddress, contractDefinition, this.provider);
   }
 
-  async callContractMethod(contract, method, args) {
-    const contractMethod = await contract.methods[method](...args);
-
-    return new Promise((resolve, reject) => {
-      contractMethod.call({}, (error, result) => {
-        if (error) reject(error);
-
-        resolve(result);
-      })
-    });
+  callContractMethod(contract, method, args) {
+    return contract[method](...args);
   }
 }
