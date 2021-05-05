@@ -53,5 +53,7 @@ module.exports = function (environment) {
     // here you can enable a production-specific feature
   }
 
+  ENV.APP.ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY;
+
   return ENV;
 };
