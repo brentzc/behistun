@@ -7,4 +7,8 @@ export default class BlogPostRoute extends Route {
   model({ post_title }) {
     return this.store.findRecord('post', post_title);
   }
+
+  afterModel(model) {
+    return model.loadContent();
+  }
 }

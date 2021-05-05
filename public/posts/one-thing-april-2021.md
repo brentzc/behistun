@@ -1,3 +1,5 @@
+### One Thing: April 2021
+
 I had a very singular focus on the digital art world this month. I've noticed that as NFT's have reached the mainstream, there have been a lot of criticisms hurled at it, and for some good reasons! There is a ton of noise in the space, from celebrities doing the bare minimum to make some quick money[^1] to uninteresting copycat projects with token holders begging for a retweet in the mentions of any Twitter account with a CryptoPunk. But in my eyes, Ethereum has proved to be an incredible vector for ingenuity and creativity, which has made sifting through the noise well worth it. With that said, here's my one big thing for the month.
 
 #### This is a Robbery and The Future of Art Theft
