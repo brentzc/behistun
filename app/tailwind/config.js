@@ -35,6 +35,9 @@ module.exports = {
         'zoom-in': 'zoom-in',
         'zoom-out': 'zoom-out'
       },
+      transitionProperty: {
+        'inset': 'inset'
+      },
       backgroundImage: () => ({
         'marble': "url('/assets/images/marble_texture.png')",
       }),

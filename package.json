@@ -61,7 +61,7 @@
     "ember-page-title": "^6.2.1",
     "ember-qunit": "^5.1.2",
     "ember-resolver": "^8.0.2",
-    "ember-responsive": "^3.0.5",
+    "ember-responsive": "^3.0.6",
     "ember-rough-notation": "^0.1.0",
     "ember-source": "~3.25.1",
     "ember-template-lint": "^2.18.1",

@@ -5,12 +5,16 @@ import ENV from 'behistun/config/environment'
 export default class Web3Service extends Service {
   constructor() {
     super();
-    if (window.ethereum) {
+    if (this.hasGlobalEth) {
       this.provider = new ethers.providers.Web3Provider(window.ethereum);
     } else {
       // use etherscan provider if no browser addon is injecting web3
       this.provider = new ethers.providers.EtherscanProvider("homestead", ENV.APP.ETHERSCAN_API_KEY);
     }
+  }
+
+  get hasGlobalEth() {
+    return !!window.ethereum;
   }
 
   get hasProvider() {

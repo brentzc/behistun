@@ -4,7 +4,6 @@ import { inject as service } from '@ember/service';
 import { action } from '@ember/object';
 
 export default class SiteHeaderComponent extends Component {
-    @service media;
     @service darkMode;
     @service store;
 
