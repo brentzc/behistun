@@ -20,6 +20,13 @@ module.exports = function (defaults) {
           require('tailwindcss')('./app/tailwind/config.js'),
         ]
       }
+    },
+    prember: {
+      urls: [
+        '/',
+        '/blog/three-things-march-2021',
+        '/blog/one-thing-april-2021',
+      ]
     }
   });
 
