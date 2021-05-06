@@ -1,5 +1,5 @@
 <div
-  class="absolute transition-inset duration-700 ease-in-out {{this.position}} right-4 rounded w-60 h-20 bg-indigo-400 text-white inline-flex items-center justify-between px-6"
+  class="fixed transition-inset duration-700 ease-in-out {{this.position}} right-4 rounded w-60 h-20 bg-indigo-400 text-white inline-flex items-center justify-between px-6"
   role="button"
   {{on "click" this.startOnboarding}}
   {{did-insert (perform this.startTimer)}}
