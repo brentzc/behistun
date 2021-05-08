@@ -22,11 +22,16 @@ module.exports = function (defaults) {
       }
     },
     prember: {
-      urls: [
-        '/',
-        '/blog/three-things-march-2021',
-        '/blog/one-thing-april-2021',
-      ]
+      urls: ({ distDir }) => {
+        let urls = [ '/', '/blog' ];
+
+        const posts = require(distDir + '/data/posts.json');
+        for (const post of posts) {
+          urls.push(`/blog/${post.slug}`);
+        }
+
+        return urls;
+      }
     }
   });
 
