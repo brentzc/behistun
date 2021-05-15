@@ -3,11 +3,13 @@
     <div class="hidden md:flex md:flex-col md:w-1/3 w-1/4 pt-8 pl-8">
       <Loading-Text
         @text={{@token.metadata.name}}
+        @displayWhen={{@token.metadata.name}}
         @loadingClass="loading-content-base h-8 w-1/2 ml-2"
         @displayClass="text-3xl text-indigo-500 dark:text-red-500 font-display font-bold tracking-widest bg-white bg-opacity-75 dark:bg-transparent"
       />
       <Loading-Text
         @text={{@token.metadata.description}}
+        @displayWhen={{@token.metadata.description}}
         @loadingClass="loading-content-base h-64 w-full ml-2 mt-8"
         @displayClass="text-gray-700 dark:text-white text-lg font-body pt-8 bg-white dark:bg-transparent bg-opacity-75"
       />
@@ -52,11 +54,13 @@
   <div class="md:hidden text-center mt-4">
     <Loading-Text
       @text={{@token.metadata.name}}
+      @displayWhen={{@token.metadata.name}}
       @loadingClass="loading-content-base h-8 w-1/2 mx-auto"
       @displayClass="text-3xl text-indigo-500 dark:text-red-500 font-display bg-white bg-opacity-75 dark:bg-transparent"
     />
     <Loading-Text
       @text={{@token.metadata.description}}
+      @displayWhen={{@token.metadata.description}}
       @loadingClass="loading-content-base h-64 w-10/12 mx-auto mt-8"
       @displayClass="text-gray-700 dark:text-white text-lg font-body pt-8 text-left px-4 md:px-8 bg-white dark:bg-transparent bg-opacity-75"
     />

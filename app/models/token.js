@@ -30,6 +30,7 @@ export default class TokenModel extends Model {
   @attr('boolean') isSold;
   @attr('string') sellDate;
   @attr('string') fileType;
+  @attr('string') artist;
 
   @attr('string') metadataAddress; // unique to Hashmasks at the moment
   @attr('string') marketplaceSlug;
