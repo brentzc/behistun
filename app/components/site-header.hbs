@@ -5,7 +5,11 @@
   </LinkTo>
   <div class="flex lg:hidden">
     <button role="button" type="button" class="text-indigo-200 hover:text-white mr-4" {{on "click" this.darkMode.toggleDarkMode}}>
-      <FaIcon @icon="{{if this.darkMode.enabled "sun" "moon"}}" @prefix="far" />
+      {{#if this.darkMode.enabled}}
+        <Svg::Moon class="fill-current h-6 w-6" />
+      {{else}}
+        <Svg::Sun class="fill-current h-6 w-6" />
+      {{/if}}
     </button>
     <button type="button" class="flex items-center px-3 py-2 border rounded text-indigo-200 border-indigo-400 hover:text-white hover:border-white" {{on "click" this.toggleNavDrawer}}>
       <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
@@ -16,22 +20,30 @@
       <div class="lg:flex-grow" />
       <Animated-Link
         @route="blog"
-        class="block mt-4 lg:inline-block lg:mt-0 text-indigo-200 hover:text-white mr-4"
+        class="flex items-center mt-4 lg:inline-block lg:mt-0 text-indigo-200 hover:text-white mr-4"
       >
-        <FaIcon @icon="bookmark" @prefix="far" />
-        <span class="ml-2">Words</span>
+        <div class="flex items-center">
+          <Svg::Book class="fill-current h-5 w-5" />
+          <span class="ml-2">Words</span>
+        </div>
       </Animated-Link>
       <Animated-Link
         @route="gallery"
         class="block mt-4 lg:inline-block lg:mt-0 text-indigo-200 hover:text-white mr-4"
         {{on "mouseenter" this.loadTokens}}
       >
-        <FaIcon @icon="gem" @prefix="far" />
-        <span class="ml-2">NFT Gallery</span>
+        <div class="flex items-center">
+          <Svg::Art class="fill-current h-5 w-5" />
+          <span class="ml-2">NFT Gallery</span>
+        </div>
       </Animated-Link>
       <div class="hidden lg:block mt-4 lg:inline-block lg:mt-0 mr-4">
         <button role="button" type="button" aria-label="Toggle Dark Mode" class="text-indigo-200 hover:text-white" {{on "click" this.darkMode.toggleDarkMode}}>
-          <FaIcon @icon="{{if this.darkMode.enabled "sun" "moon"}}" @prefix="far" />
+          {{#if this.darkMode.enabled}}
+            <Svg::Moon class="fill-current h-6 w-6" />
+          {{else}}
+            <Svg::Sun class="fill-current h-6 w-6" />
+          {{/if}}
         </button>
       </div>
     </div>
