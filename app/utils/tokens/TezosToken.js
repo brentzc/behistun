@@ -29,6 +29,10 @@ class TezosToken {
   get title() {
     return this.metadata.title;
   }
+
+  get marketplaceUrl() {
+    return `https://www.hicetnunc.xyz/objkt/${this.tokenId}`;
+  }
 }
 
 export default TezosToken;

@@ -20,6 +20,11 @@ const Marketplaces = {
   HIC_ET_NUNC: 'Hic Et Nunc'
 }
 
+const Blockchains = {
+  ETHEREUM: 'ETHEREUM',
+  TEZOS: 'TEZOS'
+}
+
 export default class TokenModel extends Model {
   @service web3;
   @service tezos;
@@ -121,5 +126,16 @@ export default class TokenModel extends Model {
 
   get marketplaceName() {
     return Marketplaces[this.marketplace];
+  }
+
+  get blockchain() {
+    switch(this.marketplaceName) {
+      case Marketplaces.HIC_ET_NUNC: {
+        return Blockchains.TEZOS;
+      }
+      default: {
+        return Blockchains.ETHEREUM;
+      }
+    }
   }
 }
