@@ -29,6 +29,7 @@
         <Token::Video
           class="max-h-112 xl:max-h-128 rounded my-8 shadow-lg {{unless @token.videoUrl "hidden"}}"
           @source={{@token.videoUrl}}
+          controls
         />
       {{else}}
         {{#unless this.displayImage}}

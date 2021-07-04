@@ -1,7 +1,7 @@
 <video ...attributes
-  muted
   loop
-  controls
+  muted
+  {{on "canplay" this.canPlay}}
 >
   {{#if @source}}
     <source src={{@source}} type="video/mp4">

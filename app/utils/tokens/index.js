@@ -4,6 +4,7 @@ import HashMaskToken from './HashMaskToken';
 import MakersPlaceToken from './MakersPlaceToken';
 import FoundationToken from './FoundationToken';
 import KnownOriginToken from './KnownOriginToken';
+import TezosToken from './TezosToken';
 
 export default {
   ERC1155Token,
@@ -11,5 +12,6 @@ export default {
   HashMaskToken,
   MakersPlaceToken,
   FoundationToken,
-  KnownOriginToken
+  KnownOriginToken,
+  TezosToken
 }

@@ -8,18 +8,21 @@ const {
   ERC1155Token,
   ERC721Token,
   FoundationToken,
-  KnownOriginToken
+  KnownOriginToken,
+  TezosToken
 } = tokens;
 
 const Marketplaces = {
   FOUNDATION: 'Foundation',
   OPENSEA: 'OpenSea',
   KNOWN_ORIGIN: 'Known Origin',
-  MAKERSPLACE: 'MakersPlace'
+  MAKERSPLACE: 'MakersPlace',
+  HIC_ET_NUNC: 'Hic Et Nunc'
 }
 
 export default class TokenModel extends Model {
   @service web3;
+  @service tezos;
 
   @attr('string') slug;
   @attr('string') marketplace;
@@ -53,7 +56,7 @@ export default class TokenModel extends Model {
       tokenId,
       metadata,
     };
-    const services = { web3: this.web3 };
+    const services = { web3: this.web3, tezos: this.tezos };
 
     switch (contractType) {
       case 'ERC721': {
@@ -82,6 +85,9 @@ export default class TokenModel extends Model {
           marketplaceSlug: this.marketplaceSlug
         }
         return new MakersPlaceToken(tokenArgs, services, makersplaceProperties);
+      }
+      case 'HIC_ET_NUNC': {
+        return new TezosToken(tokenArgs, services);
       }
       default: {
         throw new Error('Unsupported Contract Type');
