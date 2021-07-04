@@ -42,7 +42,11 @@
       />
     </div>
     <div class="p-5 text-indigo-600 hover:text-indigo-700 dark:text-white">
-      <FaIcon @icon="eye" @prefix="far" />
+      {{#if (eq @token.blockchain "ETHEREUM") }}
+        <Svg::Ethereum class="h-5 w-5" />
+      {{else}}
+        <Svg::Tezos class="fill-current h-5 w-5" />
+      {{/if}}
     </div>
   </LinkTo>
 </div>
