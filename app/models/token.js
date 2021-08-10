@@ -112,6 +112,12 @@ export default class TokenModel extends Model {
     return this.tokenClass.videoUrl;
   }
 
+  get interactiveUrl() {
+    if (!this.metadata || this.fileType !== 'INTERACTIVE') return null;
+
+    return this.tokenClass.interactiveUrl;
+  }
+
   get etherscanUrl() {
     return this.tokenClass.etherscanUrl;
   }

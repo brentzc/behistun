@@ -31,6 +31,10 @@
           @source={{@token.videoUrl}}
           controls
         />
+      {{else if (eq @token.fileType "INTERACTIVE")}}
+        {{#if @token.interactiveUrl}}
+          <iframe title={{@token.metadata.name}} class="h-96 md:h-auto max-h-112 xl:max-h-128 w-11/12 rounded my-8 shadow-lg" src={{@token.interactiveUrl}} />
+        {{/if}}
       {{else}}
         {{#unless this.displayImage}}
           <div class="loading-content-base h-96 w-full m-8" />

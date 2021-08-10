@@ -17,6 +17,10 @@ class ERC721Token extends Token {
   get videoUrl() {
     return this.metadata.animation_url;
   }
+
+  get interactiveUrl() {
+    return this.metadata.animation_url;
+  }
 }
 
 export default ERC721Token;

@@ -10,6 +10,10 @@
             class="absolute object-cover w-full h-full {{unless @token.videoUrl "hidden"}}"
             @source={{@token.videoUrl}}
           />
+      {{else if (eq @token.fileType "INTERACTIVE")}}
+        {{#if @token.interactiveUrl}}
+          <iframe title={{@token.metadata.name}} class="absolute object-cover w-full h-full" src={{@token.interactiveUrl}} />
+        {{/if}}
       {{else}}
         {{#unless this.displayImage}}
           <div class="animate-pulse flex space-x-4 absolute object-cover w-full h-full bg-indigo-200 rounded-t" />
